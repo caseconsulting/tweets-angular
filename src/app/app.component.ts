@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'search-bar',
+  selector: 'app',
   templateUrl: './app.component.html'
 })
 export class AppComponent {
