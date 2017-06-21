@@ -6,3 +6,9 @@
   margin-bottom: 40px;
   color:#1DA1F2;
 }
+
+/*footer at bottom*/
+html,body
+{
+  height:100%;
+}
