@@ -2,12 +2,12 @@
 <div class="">
   <div class="mdc-textfield input-group">
     <span class="input-group-addon" id="basic-addon1"><i class="button-icon-at fa fa-at fa-lg"></i></span>
-    <input id="input" type="text" class="form-control" placeholder="foo-bar">
+    <input #input type="text" class="form-control" placeholder="foo-bar">
     <span class="input-group-btn">
-      <button (click)="onClickMe()" type="button" class="btn btn-default" id="favorites"><i class="button-icons fa fa-star" aria-hidden="true"></i>Favorites</button>
-      <button (click)="onClickMe()" type="button" class="btn btn-default" id="friends"><i class="button-icons fa fa-rebel" aria-hidden="true"></i>Following</button>
-      <button (click)="onClickMe()" type="button" class="btn btn-default" id="followers"><i class="button-icons fa fa-users" aria-hidden="true"></i>Followers</button>
-      <button (click)="onClickMe()" type="button" class="btn btn-default" id="tweets"><i class="button-icons fa fa-twitter" aria-hidden="true"></i>Tweets</button>
+      <button (click)="Click(input.value)" type="button" class="btn btn-default" id="favorites"><i class="button-icons fa fa-star" aria-hidden="true"></i>Favorites</button>
+      <button (click)="Click(input.value)" type="button" class="btn btn-default" id="friends"><i class="button-icons fa fa-rebel" aria-hidden="true"></i>Following</button>
+      <button (click)="Click(input.value)" type="button" class="btn btn-default" id="followers"><i class="button-icons fa fa-users" aria-hidden="true"></i>Followers</button>
+      <button (click)="Click(input.value)" type="button" class="btn btn-default" id="tweets"><i class="button-icons fa fa-twitter" aria-hidden="true"></i>Tweets</button>
     </span>
   </div>
 </div>
