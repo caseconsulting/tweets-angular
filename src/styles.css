@@ -12,3 +12,10 @@ html,body
 {
   height:100%;
 }
+
+/*loading icon style*/
+.loading-icon{
+  margin-left: 25%;
+  margin-top: 25%;
+  color:#1DA1F2;
+}
