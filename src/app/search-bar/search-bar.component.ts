@@ -12,10 +12,8 @@ export class SearchBarComponent implements OnInit {
   ngOnInit() {
 
   }
-  clickMessage = '';
-
   onClickMe() {
-    this.clickMessage = 'You are my hero!';
+    alert("Button: Ouch");
   }
 
 }
