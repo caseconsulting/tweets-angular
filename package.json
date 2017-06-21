@@ -1,0 +1,24 @@
+{
+  "name": "tweets-angular",
+  "version": "1.0.0",
+  "description": "Best tweets app around",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caseconsulting/tweets-angular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caseconsulting/tweets-angular/issues"
+  },
+  "homepage": "https://github.com/caseconsulting/tweets-angular#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.1",
+    "typescript": "^2.3.4"
+  }
+}
