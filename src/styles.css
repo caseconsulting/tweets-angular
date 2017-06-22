@@ -15,7 +15,20 @@ html,body
 
 /*loading icon style*/
 .loading-icon{
-  margin-left: 25%;
-  margin-top: 25%;
-  color:#1DA1F2;
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+.foo-bar{
+  z-index: 10 !important;
+  /*background-image: url("src/assets/img/notes.gif");*/
 }
