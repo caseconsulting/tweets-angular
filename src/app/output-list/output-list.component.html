@@ -1,0 +1,20 @@
+<h1>List of Tweets({{mode}})</h1>
+<h3>Tweets:</h3>
+<ul>
+  <li *ngFor="let tweet of tweets">{{tweets.text}}</li>
+</ul>
+
+<!-- <label>New tweet name: <input #newHeroName /></label> -->
+<!-- <button (click)="addHero(newHeroName.value); newHeroName.value=''">Add Hero</button> -->
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+<!-- Source: https://angular.io/guide/http -->
+<!-- subject to change -->
+
+<!-- TODO:
+* Continue working on copying over from angular website
+* Try to link to local json file
+* Display local json information to console
+* Load text from tweets into output-list componenet
+           -->
