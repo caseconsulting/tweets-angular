@@ -8,9 +8,7 @@ import { HttpModule, JsonpModule } from '@angular/http'; //Do we need the JsonpM
 import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { OutputComponent } from './output/output.component';
-
 import { OutputListComponent } from './output-list/output-list.component';
-
 import { FooterComponent } from './footer/footer.component';
 
 
@@ -20,12 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     AppComponent,
     SearchBarComponent,
     OutputComponent,
-
     OutputListComponent,
-
     FooterComponent
-
-
   ],
   imports: [
     BrowserModule,

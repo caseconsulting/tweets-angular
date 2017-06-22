@@ -13,7 +13,7 @@ export class Tweet {
 
 @Injectable()
 export class OutputService {
-  private jsonUrl = '../assets/tweetsTest.json';  // URL to web API
+  private jsonUrl = 'http://localhost:3000/tweets/google';  // URL to web API
 
 
   constructor (private http: Http) {}
