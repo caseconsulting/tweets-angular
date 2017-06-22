@@ -1,7 +1,7 @@
-<h1>List of Tweets</h1>
+<h1>List of Tweets({{mode}})</h1>
 <h3>Tweets:</h3>
 <ul>
-  <li *ngFor="let tweet of tweets">{{tweet.text}}</li>
+  <li *ngFor="let tweet of tweets">{{tweet}}</li>
 </ul>
 
 <!-- <label>New tweet name: <input #newHeroName /></label> -->
@@ -9,12 +9,10 @@
 
 <p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
 
-<!-- Source: https://angular.io/guide/http -->
-<!-- subject to change -->
 
 <!-- TODO:
-* Continue working on copying over from angular website
-* Try to link to local json file
+
 * Display local json information to console
+* Emulate real express route call
 * Load text from tweets into output-list componenet
            -->
