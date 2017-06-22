@@ -27,6 +27,13 @@ html,body
   right: 0;
 }
 
+.clickable:hover {
+  cursor: pointer;
+  background-color: #E8E8E8;
+
+}
+
+
 
 .foo-bar{
   z-index: 10 !important;
