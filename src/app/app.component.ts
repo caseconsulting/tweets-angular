@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
- import { AccountService } from './account.service';
+
 @Component({
   selector: 'app',
-  templateUrl: './app.component.html',
-  providers: [AccountService]
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   selectedHandle: string;
@@ -15,7 +14,7 @@ export class AppComponent {
     {
       console.warn('Your handle just changed!', changedHandle);
       this.selectedHandle = changedHandle;
-      
+
     }
   }
 

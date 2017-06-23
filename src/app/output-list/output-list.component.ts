@@ -1,6 +1,5 @@
 import { Component, OnInit, OnChanges, Input } from '@angular/core';
 import {Tweet, OutputService} from '../output.service';
-import { Account, AccountService } from '../account.service';
 
 @Component({
   selector: 'output-list',
@@ -15,7 +14,7 @@ export class OutputListComponent implements OnInit, OnChanges {
 
   errorMessage: string;
   tweets: Tweet[];
-  constructor(private outputService: OutputService, private accountService: AccountService) { }
+  constructor(private outputService: OutputService) { }
 
   getOutput(handle: string, type: string){
     this.outputService.getOutput(handle, type)
