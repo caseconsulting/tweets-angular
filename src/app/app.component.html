@@ -3,8 +3,8 @@
     <h1 class="text-center">Get Tweets</h1>
   </div>
   <div class="container">
-    <search-bar></search-bar>
+    <search-bar (changed)= changed($event)></search-bar>
   </div>
 </nav>
-
-<output-list>Output List</output-list>
+<h5>changed Handle: {{selectedHandle}}</h5>
+<output-list *ngIf="selectedHandle" [handle]="selectedHandle">Output List</output-list>

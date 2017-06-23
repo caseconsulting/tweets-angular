@@ -10,7 +10,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { OutputComponent } from './output/output.component';
 import { OutputListComponent } from './output-list/output-list.component';
 import { FooterComponent } from './footer/footer.component';
-
+//import { AccountService } from './account.service';
 
 
 @NgModule({

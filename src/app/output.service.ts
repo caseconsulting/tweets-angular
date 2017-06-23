@@ -14,14 +14,16 @@ export class Tweet {
 @Injectable()
 export class OutputService {
   //express app
-  private jsonUrl = 'http://localhost:3000/tweets/google';  // URL to web API
+  private jsonUrl = 'http://localhost:3000/tweets/';  // URL to web API
 
 
   constructor (private http: Http) {}
 
-  getOutput() {
-    return this.http.get(this.jsonUrl)
-                    .map((response: Response) => <Tweet[]>response.json())//does this have to be an array
+  getOutput(handle: string, type: string) {
+    let jsonUrl = `http://localhost:3000/${type}/${handle}`;
+
+    return this.http.get(jsonUrl)
+                    .map((response: Response) => <Tweet[]>response.json())
                     .do(mapReturn => {
                       console.log('mapReturn ',mapReturn);
                     });

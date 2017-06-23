@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
+import {Account, AccountService } from '../account.service';
 
 @Component({
   selector: 'search-bar',
@@ -6,14 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  @Output() changed = new EventEmitter<string>();
 
-  constructor() { }
+  private account: Account;
+  constructor(private accountService:AccountService) { }
 
   ngOnInit() {
 
   }
+
   Click(input:string) {
-  console.log('Username sent: '+input);
+  this.setAccount(input);
+  this.changed.emit(input);
+  //console.log('Username sent: '+input);
+
+
   }
+
+  setAccount(handle: string){
+    this.accountService.setAccount(handle);
+}
+
+
 
 }
