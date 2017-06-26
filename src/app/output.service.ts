@@ -15,10 +15,18 @@ export class OutputService {
 
   constructor (private http: Http) {}
 
-  getOutput(handle: string, type: string) {
-    let jsonUrl = `http://localhost:3000/${type}/${handle}`;
+  //Note:
+  //Backticks registers newline chars in the URL, breaking the call to the API
+  //Use traditional string concatenation instead :-)
+  getOutput(twitterParameters: TwitterObj) {
 
-    return this.http.get(jsonUrl)
+    let URL = 'http://localhost:3000/'+
+    twitterParameters.route +'/'+ twitterParameters.text;
+
+    console.log('%c  sent username: ' + twitterParameters.text
+     + ' to the following route: ' + twitterParameters.route, 'color: #3AB54A');
+
+    return this.http.get(URL)
                     .map((response: Response) => <TwitterObj[]>response.json());
   }
 

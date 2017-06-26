@@ -9,35 +9,37 @@ import {TwitterObj, OutputService} from '../output.service';
 
 })
 export class OutputListComponent implements OnInit, DoCheck {
-  @Input() handle: TwitterObj;
+  @Input() inputParams: TwitterObj;
   differ: any;
   errorMessage: string;
   items: TwitterObj[];
 
-  constructor(private outputService: OutputService, private differs: KeyValueDiffers) {
+  constructor(
+    private outputService: OutputService, private differs: KeyValueDiffers) {
     this.differ = differs.find({}).create(null);
   }
 
-  getOutput(handle: string, type: string){
+  getOutput(twitterParameters: TwitterObj){
 
-    this.outputService.getOutput(handle, type)
+    this.outputService.getOutput(twitterParameters)
     .subscribe(
       items => this.items = items,
       error => this.errorMessage = <any>error
     );
   }
   ngOnInit() {
-    this.getOutput(this.handle.text, this.handle.route);
+    this.getOutput(this.inputParams);
   }
-  ngDoCheck() {
 
-    var changes = this.differ.diff(this.handle);
-    
+  //This snippet of code is a blessing
+  ngDoCheck() {
+    var changes = this.differ.diff(this.inputParams);
+
     if(changes) {
-      changes.forEachChangedItem(r => console.log('changed ', r.currentValue));
-      changes.forEachAddedItem(r => console.log('added ' + r.currentValue));
-      changes.forEachRemovedItem(r => console.log('removed ' + r.currentValue));
-      this.getOutput(this.handle.text, this.handle.route);
+      changes.forEachChangedItem(r => console.log('%c changed '+ r.currentValue, 'color: #38515A'));
+      changes.forEachAddedItem(r => console.log('%c added ' + r.currentValue, 'color: #38515A'));
+      changes.forEachRemovedItem(r => console.log('%c removed ' + r.currentValue, 'color: #38515A'));
+      this.getOutput(this.inputParams);
     }
   }
 
