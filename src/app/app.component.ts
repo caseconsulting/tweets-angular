@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Tweet } from './output.service';
+import { TwitterObj } from './output.service';
 import * as _ from 'lodash';
 
 @Component({
@@ -7,15 +7,15 @@ import * as _ from 'lodash';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-  selectedHandle: Tweet;
+  selectedInput: TwitterObj;
 
 
   //Checks to see that handle isn't undefined
-  //assures that undefined parameters 
-  changed(changedHandle: any){
-    if(changedHandle)
+  //assures that undefined parameters
+  changed(changedInput: any){
+    if(changedInput)
     {
-      this.selectedHandle = changedHandle;
+      this.selectedInput = changedInput;
     }
   }
 

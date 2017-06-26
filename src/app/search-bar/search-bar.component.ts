@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { Tweet, OutputService} from '../output.service';
+import { TwitterObj, OutputService} from '../output.service';
 
 @Component({
   selector: 'search-bar',
@@ -8,28 +8,19 @@ import { Tweet, OutputService} from '../output.service';
 })
 
 export class SearchBarComponent implements OnInit {
-  @Output() changed = new EventEmitter<Tweet>();
+  @Output() changed = new EventEmitter<TwitterObj>();
 
-  tweet: Tweet;
+  //user input that'll eventually be passed over to API includes user and route
+  inputData: TwitterObj;
+
   constructor() {
-    this.tweet = new Tweet('no text', 'no route');
+    this.inputData = new TwitterObj('no text', 'no route');
   }
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   Click(input:string, routeName: string) {
-
-    this.tweet.text = input;
-    this.tweet.route = routeName;
-    this.changed.emit(this.tweet);
-
-
-
+    this.inputData.text = input;
+    this.inputData.route = routeName;
+    this.changed.emit(this.inputData);
   }
-
-
-
-
-
 }

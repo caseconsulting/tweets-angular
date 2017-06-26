@@ -1,5 +1,5 @@
 import { Component, OnInit, DoCheck, Input, KeyValueDiffers } from '@angular/core';
-import {Tweet, OutputService} from '../output.service';
+import {TwitterObj, OutputService} from '../output.service';
 
 @Component({
   selector: 'output-list',
@@ -9,10 +9,10 @@ import {Tweet, OutputService} from '../output.service';
 
 })
 export class OutputListComponent implements OnInit, DoCheck {
-  @Input() handle: Tweet;
+  @Input() handle: TwitterObj;
   differ: any;
   errorMessage: string;
-  items: Tweet[];
+  items: TwitterObj[];
 
   constructor(private outputService: OutputService, private differs: KeyValueDiffers) {
     this.differ = differs.find({}).create(null);
@@ -32,8 +32,8 @@ export class OutputListComponent implements OnInit, DoCheck {
   ngDoCheck() {
 
     var changes = this.differ.diff(this.handle);
+    
     if(changes) {
-
       changes.forEachChangedItem(r => console.log('changed ', r.currentValue));
       changes.forEachAddedItem(r => console.log('added ' + r.currentValue));
       changes.forEachRemovedItem(r => console.log('removed ' + r.currentValue));
