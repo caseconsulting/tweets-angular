@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, Input } from '@angular/core';
+import { Component, OnInit, DoCheck, Input, KeyValueDiffers } from '@angular/core';
 import {Tweet, OutputService} from '../output.service';
 
 @Component({
@@ -8,13 +8,15 @@ import {Tweet, OutputService} from '../output.service';
   providers: [OutputService]
 
 })
-export class OutputListComponent implements OnInit, OnChanges {
-@Input() handle: Tweet;
-
-
+export class OutputListComponent implements OnInit, DoCheck {
+  @Input() handle: Tweet;
+  differ: any;
   errorMessage: string;
   items: Tweet[];
-  constructor(private outputService: OutputService) { }
+
+  constructor(private outputService: OutputService, private differs: KeyValueDiffers) {
+    this.differ = differs.find({}).create(null);
+  }
 
   getOutput(handle: string, type: string){
     console.log('calling get output')
@@ -30,10 +32,21 @@ export class OutputListComponent implements OnInit, OnChanges {
     this.items = [];
 
   }
-  ngOnChanges() {
-    this.getOutput(this.handle.text, this.handle.route);
-    console.log("Changes just occured in outputlist")
+  ngDoCheck() {
+    //console.log("Changes just occured in outputlist " +this.handle.text +' '+ this.handle.route);
+    var changes = this.differ.diff(this.handle);
+    if(changes) {
+			console.log('changes detected');
+			changes.forEachChangedItem(r => console.log('changed ', r.currentValue));
+			changes.forEachAddedItem(r => console.log('added ' + r.currentValue));
+			changes.forEachRemovedItem(r => console.log('removed ' + r.currentValue));
+      this.getOutput(this.handle.text, this.handle.route);
+		} else {
+			console.log('nothing changed');
+		}
+
+
 
   }
-  
+
 }
