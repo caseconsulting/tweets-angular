@@ -4,10 +4,10 @@
     <span class="input-group-addon" id="basic-addon1"><i class="button-icon-at fa fa-at fa-lg"></i></span>
     <input #input type="text" class="form-control" placeholder="foo-bar">
     <span class="input-group-btn">
-      <button (click)="Click(input.value)" type="button" class="btn btn-default"><i class="button-icons fa fa-star" aria-hidden="true"></i>Favorites</button>
-      <button (click)="Click(input.value)" type="button" class="btn btn-default"><i class="button-icons fa fa-rebel" aria-hidden="true"></i>Following</button>
-      <button (click)="Click(input.value)" type="button" class="btn btn-default"><i class="button-icons fa fa-users" aria-hidden="true"></i>Followers</button>
-      <button (click)="Click(input.value)" type="button" class="btn btn-default"><i class="button-icons fa fa-twitter" aria-hidden="true"></i>Tweets</button>
+      <button (click)="Click(input.value, 'favorites')" type="button" class="btn btn-default"><i class="button-icons fa fa-star" aria-hidden="true"></i>Favorites</button>
+      <button (click)="Click(input.value, 'friends')" type="button" class="btn btn-default"><i class="button-icons fa fa-rebel" aria-hidden="true"></i>Following</button>
+      <button (click)="Click(input.value, 'followers')" type="button" class="btn btn-default"><i class="button-icons fa fa-users" aria-hidden="true"></i>Followers</button>
+      <button (click)="Click(input.value, 'tweets')" type="button" class="btn btn-default"><i class="button-icons fa fa-twitter" aria-hidden="true"></i>Tweets</button>
     </span>
   </div>
 </div>

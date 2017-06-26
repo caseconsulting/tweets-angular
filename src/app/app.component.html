@@ -6,5 +6,5 @@
     <search-bar (changed)= changed($event)></search-bar>
   </div>
 </nav>
-<h5>changed Handle: {{selectedHandle}}</h5>
+<!-- <h5>changed Handle: {{selectedHandle}}</h5> -->
 <output-list *ngIf="selectedHandle" [handle]="selectedHandle">Output List</output-list>
