@@ -10,11 +10,11 @@ export class AppComponent {
   selectedHandle: Tweet;
 
 
-
+  //Checks to see that handle isn't undefined
+  //assures that undefined parameters 
   changed(changedHandle: any){
     if(changedHandle)
     {
-      console.warn('Your handle just exists!', changedHandle);
       this.selectedHandle = changedHandle;
     }
   }

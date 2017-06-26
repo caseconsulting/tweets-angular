@@ -9,32 +9,21 @@ import 'rxjs/add/operator/do';
 
 export class Tweet {
 
-  constructor(public text: string, public route: string){
-    }
+  constructor(public text: string, public route: string){}
 }
 
 @Injectable()
 export class OutputService {
-  //express app
-  //private jsonUrl = 'http://localhost:3000/tweets/';  // URL to web API
-
 
   constructor (private http: Http) {}
 
   getOutput(handle: string, type: string) {
     let jsonUrl = `http://localhost:3000/${type}/${handle}`;
-    console.log(`Calling ${jsonUrl}`);
+
     return this.http.get(jsonUrl)
-                    .map((response: Response) => <Tweet[]>response.json())
-                    .do(mapReturn => {
-                      console.log('mapReturn ',mapReturn);
-                    });
-                    //.catch(this.handleError);
+                    .map((response: Response) => <Tweet[]>response.json());
   }
-  // private extractData(res: Response) {
-  //   let body = res.json();
-  //   return body.data || { };
-  // }
+
 
   private handleError (error: Response | any) {
     // In a real world app, you might use a remote logging infrastructure

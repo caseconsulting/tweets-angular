@@ -22,9 +22,8 @@ export class SearchBarComponent implements OnInit {
 
     this.tweet.text = input;
     this.tweet.route = routeName;
-    console.log(this.tweet); //this should work
     this.changed.emit(this.tweet);
-    //console.log('Username sent: '+input);
+
 
 
   }
