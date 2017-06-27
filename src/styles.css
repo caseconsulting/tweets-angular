@@ -34,6 +34,13 @@ html,body
 }
 
 
+#help-icon{
+  float: right;
+  font-size: 25px;
+  padding-right: 5px;
+}
+
+
 
 .foo-bar{
   z-index: 10 !important;

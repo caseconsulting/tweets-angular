@@ -12,18 +12,11 @@ import { OutputComponent } from './output/output.component';
 import { OutputListComponent } from './output-list/output-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { HelpComponent } from './help/help.component';
+import { routing } from './app.routes';
+
 //import { AccountService } from './account.service';
 
-//routing
-const appRoutes: Routes = [
-  { path: '/app', component: AppComponent },
-  { path: '/help',      component: HelpComponent },
-  { path: '',
-    redirectTo: '/app',
-    pathMatch: 'full'
-  },
-  {path: '**', component: AppComponent}
-];
+
 
 
 
@@ -41,9 +34,11 @@ const appRoutes: Routes = [
     FormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoutes)
+    routing
   ],
-  providers: [],
+  providers: [
+
+  ],
 
   bootstrap: [AppComponent]
 })

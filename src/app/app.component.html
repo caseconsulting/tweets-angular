@@ -1,5 +1,7 @@
 <nav class="navbar navbar-default" role="navigation">
+
   <div class="container-fluid fancy-heading">
+    <a id="help-icon" [routerLink]="['help']" (click)="list.remove()"><i class="fa fa-life-ring"></i></a>
     <h1 class="text-center">Get Tweets</h1>
   </div>
   <div class="container">
@@ -7,4 +9,5 @@
   </div>
 </nav>
 <!-- <h5>changed Handle: {{selectedHandle}}</h5> -->
+<router-outlet></router-outlet>
 <output-list *ngIf="selectedInput" [inputParams]="selectedInput">Output List</output-list>
