@@ -10,6 +10,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { OutputComponent } from './output/output.component';
 import { OutputListComponent } from './output-list/output-list.component';
 import { FooterComponent } from './footer/footer.component';
+import { HelpComponent } from './help/help.component';
 //import { AccountService } from './account.service';
 
 
@@ -19,7 +20,8 @@ import { FooterComponent } from './footer/footer.component';
     SearchBarComponent,
     OutputComponent,
     OutputListComponent,
-    FooterComponent
+    FooterComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
