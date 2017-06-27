@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms'; //try taking this out and check if it still works
 import { HttpModule, JsonpModule } from '@angular/http'; //Do we need the JsonpModule?
+import { RouterModule, Routes } from '@angular/router';
 
 //Our imports
 import { AppComponent } from './app.component';
@@ -12,6 +13,18 @@ import { OutputListComponent } from './output-list/output-list.component';
 import { FooterComponent } from './footer/footer.component';
 import { HelpComponent } from './help/help.component';
 //import { AccountService } from './account.service';
+
+//routing
+const appRoutes: Routes = [
+  { path: '/app', component: AppComponent },
+  { path: '/help',      component: HelpComponent },
+  { path: '',
+    redirectTo: '/app',
+    pathMatch: 'full'
+  },
+  {path: '**', component: AppComponent}
+];
+
 
 
 @NgModule({
@@ -27,7 +40,8 @@ import { HelpComponent } from './help/help.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule
+    JsonpModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
 
